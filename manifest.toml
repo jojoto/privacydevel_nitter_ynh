@@ -5,7 +5,7 @@ name = "Nitter"
 description.en = "Alternative front-end for Twitter that respects your privacy"
 description.fr = "Interface alternative pour Twitter qui respecte votre vie privée"
 
-version = "2023.08.08~ynh1"
+version = "2023.12.07~ynh1"
 
 maintainers = ["Jules Bertholet"]
 
@@ -14,7 +14,7 @@ license = "AGPL-3.0-only"
 website = "https://nitter.net/"
 demo = "https://nitter.net/"
 admindoc = "https://github.com/zedeus/nitter/wiki"
-code = "https://github.com/zedeus/nitter"
+code = "https://github.com/PrivacyDevel/nitter"
 
 [integration]
 yunohost = ">= 11.2"
@@ -63,10 +63,27 @@ ram.runtime = "50M"
     optional = true
     default = ""
 
+    #new
+    [install.cookieheader]
+    ask.en = "Authentication cookie"
+    ask.fr = "Cookie d'authentication"
+    help.en = "Authentication cookie of a logged in account, required for the likes tab and NSFW content"
+    help.fr = "Cookie d'authentification d'un compte connecté, nécessaire pour l'onglet likes et le contenu NSFW"
+    type = "string"
+    default = "ct0=XXXXXXXXXXXXXXXXX; auth_token=XXXXXXXXXXXXXX"
+
+    [install.xcsrftoken]
+    ask.en = "xCsrfToken"
+    ask.fr = "xCsrfToken"
+    help.en = "required for the likes tab and NSFW content"
+    help.fr = "nécessaire pour l'onglet likes et le contenu NSFW"
+    type = "string"
+    default = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+
 [resources]
         [resources.sources.main]
-        url = "https://github.com/zedeus/nitter/tarball/d7ca353a55ea3440a2ec1f09155951210a374cc7"
-        sha256 = "028ec2f9c93c9f65259d4a6632ee4a77d9b43516921f4e741e94cfcbb0530f4a"
+        url = "https://github.com/PrivacyDevel/nitter/tarball/7d846ed7596eeba0b38638896b3ead054d1cc57f"
+        sha256 = "87bec64de00d44792d6671096fa3eb79ef16fd6d575469a0f6cd863b84e3fda1"
 
         [resources.sources.nim]
         amd64.url = "https://nim-lang.org/download/nim-1.6.14-linux_x64.tar.xz"

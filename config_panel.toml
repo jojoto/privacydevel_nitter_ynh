@@ -46,3 +46,17 @@ services = ["__APP__"]
         help = "Replace Reddit links with a Teddit or Libreddit instance"
         bind = "replaceReddit:__INSTALL_DIR__/nitter.conf"
 
+        #new
+        [main.config.cookieheader]
+        ask = "Authentication cookie"
+        type = "string"
+        default = "ct0=XXXXXXXXXXXXXXXXX; auth_token=XXXXXXXXXXXXXX"
+        help = "Authentication cookie of a logged in account, required for the likes tab and NSFW content"
+        bind = "cookieheader:__INSTALL_DIR__/nitter.conf"
+
+        [main.config.xcsrftoken]
+        ask = "xCsrfToken"
+        type = "string"
+        default = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        help = "required for the likes tab and NSFW content"
+        bind = "xcsrftoken:__INSTALL_DIR__/nitter.conf"
